@@ -4,11 +4,12 @@ import uuid
 
 
 class cell:
-    def __int__(self, floor_id):
+    def __int__(self, floor_id, cell_status, vehicle_type: vehicle_type):
         self.id = uuid.uuid4()
-        self.floor_id = floor_id
-        self.vehicle = None
-        self.status = cell_status.empty
+
+        self.parking_floor = floor_id
+        self.vehicle_type = vehicle_type
+        self.status = cell_status
 
     def get_status(self):
         return self.status
